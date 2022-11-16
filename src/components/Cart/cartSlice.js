@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isCartOpen: false,
+  cartItem: [],
 };
 
 const cartSlice = createSlice({
@@ -10,6 +11,9 @@ const cartSlice = createSlice({
   reducers: {
     toggleCart: (state) => {
       state.isCartOpen = state.isCartOpen === true ? false : true;
+    },
+    addToCart: (state, action) => {
+      state.cartItem = action.payload;
     },
   },
 });
